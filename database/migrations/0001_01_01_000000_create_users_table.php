@@ -17,8 +17,23 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('two_factor_confirmed')->default(false);
+            $table->timestamp('password_changed_at')->nullable();
+            $table->unsignedTinyInteger('active')->default(1);
+            $table->timestamp('last_login_at')->nullable();
+            $table->string('last_login_ip')->nullable();
+            $table->boolean('to_be_logged_out')->default(false);
             $table->rememberToken();
+            $table->string('profile_photo_path', 2048)->nullable();
+            $table->boolean('user_verified')->default(false);
+            $table->timestamp('user_verified_at')->nullable();
+            $table->uuid('uuid')->unique();
             $table->timestamps();
+            $table->softDeletes();
+
+
+            $table->index('email');
+            $table->index('uuid');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
