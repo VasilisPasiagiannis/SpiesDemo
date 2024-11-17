@@ -249,3 +249,13 @@ the response gives you a token that you can use in the bearer token of your requ
     included in the root of the project.
     
     SpyApp.postman_collection.json
+
+
+## Notes to Improve
+    1. Encyrpt sensitive data such as name/surname or agency
+    2. Permissioning
+    3. Advanced Filtering and Search
+    4. Detailed Activity Logs / Enhanced Error Handling
+    5. Add a cache layer for the spies to reduce the number of queries to the database.
+    6. Indexing Database
+    7. Add more Tests
